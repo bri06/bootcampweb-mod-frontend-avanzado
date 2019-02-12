@@ -17,9 +17,15 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-            "style-loader", // creates style nodes from JS strings
-            "css-loader", // translates CSS into CommonJS
-            "sass-loader" // compiles Sass to CSS, using Node Sass by default
+          "style-loader",
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          }
         ]
       },
       {
@@ -33,7 +39,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html')
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
     open: true,
