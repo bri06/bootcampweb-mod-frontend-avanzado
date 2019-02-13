@@ -1,0 +1,33 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  grid-gap: 30px;
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 10px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  background-color: lightgray;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card__image {
+  height: 350px;
+  &:hover {
+    cursor: pointer;
+    opacity: .45;
+  }
+}
+
+.container {
+  padding: 2px 16px;
+}
