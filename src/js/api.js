@@ -1,10 +1,11 @@
 const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh') => {
   const API_VERSION = `${API_URL}/api/v1/`;
   const BEERS_URL = `${API_VERSION}beers`;
+  const BEERS_QUERY = `${BEERS_URL}?limit=10`;
   const API_KEY = '9ECKBM7-HXVMJKZ-P8AE3JG-44R79HS';
   return {
     getBeers: () => {
-      return fetch(BEERS_URL, {
+      return fetch(BEERS_QUERY, {
         method: 'get',
         headers: { 'X-API-KEY': API_KEY }})
       .then(res => res.json())
