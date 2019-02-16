@@ -1,6 +1,6 @@
 import api from './api';
 
-const { getBeers, getBeer, addLike } = api();
+const { getBeers } = api();
 
 const templateBeers = ({ name, image, description, beerId }) => `
   <div class="card">
@@ -23,7 +23,7 @@ export const renderBeers = () => {
     const cards = document.querySelector('.cards-container');
     const beersHtml = beers.map(templateBeers).join('');
     cards.innerHTML = beersHtml;
-  })
+  });
 }
 
 renderBeers();
