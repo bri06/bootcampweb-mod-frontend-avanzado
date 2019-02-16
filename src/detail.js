@@ -1,1 +1,1 @@
-console.log('ENTRA EN DETAIL');
+import './styles/detail.scss';
