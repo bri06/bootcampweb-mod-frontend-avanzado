@@ -1,15 +1,17 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
-const webpack = require('webpack'); //to access built-in plugins
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
-// sample WebPack config
 module.exports = {
   devtool: 'source-map',
   mode: 'development',
-  entry: path.join(__dirname, 'src', 'main.js'),
+  entry: {
+    app: path.join(__dirname, 'src', 'main.js'),
+    detail: path.join(__dirname, 'src', 'detail.js')
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.join(__dirname, 'dist')
   },
   module: {
@@ -32,13 +34,28 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.(jpg|png|gif|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
       }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html')
+      template: path.join(__dirname, 'src', 'index.html'),
+      chunks: ['app']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'detail.html',
+      template: path.join(__dirname, 'src', 'detail.html'),
+      chunks: ['detail']
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
