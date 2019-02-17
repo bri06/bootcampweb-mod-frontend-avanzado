@@ -1,22 +1,25 @@
 import api from './api';
 import queryString from 'querystring';
+import { addLikeToDOM } from './addLike';
 
 const { getBeer } = api();
 
 const listIngredients = (arr) => arr.map((data) =>
  `<ul><li>${data.name}</li></ul>`).join('');
 
-const templateDetailBeer = ({ name, image, description, ingredients }) => `
+const templateDetailBeer = ({ name, image, description, ingredients, likes }) => `
   <div class="detail-section__container">
   <div class="detail-section_img_rat">
   <h2>${name}</h2>
     <img class="detail-section__image" src="${image}" alt="${name}">
-    <div class="rating">
-      <p>8</p>
-      <button class="icon">
-        <i class="fas fa-heart"></i>
-      </button>
-    </div>
+    <form id="like-form">
+      <div class="rating">
+        <p>${likes}</p>
+        <button type="submit" class="icon" id="like-button">
+          <i class="fas fa-heart"></i>
+        </button>
+      </div>
+    </form>
   </div>
 
   <div class="detail-setcion__content">
@@ -47,6 +50,9 @@ export const renderDetailBeer = () => {
     const detailBeerHtml = document.querySelector('.detail-section');
     const beerHtml = templateDetailBeer(beer);
     detailBeerHtml.innerHTML = beerHtml;
+
+    const btnLike = document.querySelector('#like-form');
+    addLikeToDOM(btnLike, id);
   });
 }
 

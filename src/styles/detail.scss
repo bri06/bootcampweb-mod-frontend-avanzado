@@ -30,15 +30,21 @@ header {
   display: flex;
   flex-direction: column;
   .rating {
+    cursor: pointer;
     display: flex;
     align-self: flex-end;
     padding: 5px;
     margin: 8px 2px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border: .2px #d6d6d6 solid;
+    &:active {
+      box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4);
+    }
     .icon {
       background: transparent;
       border: none;
+      outline: none;
+      cursor: pointer;
     }
   }
   .detail-section__image {
