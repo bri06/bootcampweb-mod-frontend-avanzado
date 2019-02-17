@@ -14,8 +14,8 @@ header {
     & a {
       text-decoration: none;
       color: white;
-      color: #f8a50b;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: $app-principal-color;
+      font-family: $secondary-font-family;
     }
   }
   .fa-search {
@@ -68,15 +68,15 @@ header {
     justify-content: space-evenly;
     p {
       color: #FFFF;
-      font-family: 'Open Sans', sans-serif;
+      font-family: $principal-font-family;
     }
     .btn-filter {
       border: none;
       background-color: transparent;
-      background-color: #f8a50b;
+      background-color: $app-principal-color;
       padding: 5px;
-      font-family: 'Open Sans', sans-serif;
-      box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4);
+      font-family: $principal-font-family;
+      box-shadow: $box-shadow-card-emphasis;
     }
   }
 }

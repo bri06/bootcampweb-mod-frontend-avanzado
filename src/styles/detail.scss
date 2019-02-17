@@ -24,7 +24,7 @@ header {
   border: .2px #d6d6d6 solid;
   padding: 5px;
   margin: 5px;
-  box-shadow: 3px 5px 6px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: $box-shadow-card-emphasis;
   @include desktop {
     height: 855px;
     flex-direction: row;
@@ -43,13 +43,13 @@ header {
     padding: 5px;
     margin: 8px 2px;
     width: 35px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: $box-shadow-card;
     border: .2px #d6d6d6 solid;
     .fa-heart {
       cursor: pointer;
     }
     &:active {
-      box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4);
+      box-shadow: $box-shadow-card-emphasis;
     }
   }
   .form-container {
@@ -69,7 +69,7 @@ header {
   }
   @include desktop {
     .detail-section__image {
-      box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4);
+      box-shadow: $box-shadow-card-emphasis;
       height: 500px;
       padding: 15px 60px;
 
@@ -96,7 +96,7 @@ header {
     p {
       font-size: 1.3rem;
       margin-bottom: 5px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-family: $secondary-font-family;
     }
     @include desktop {
       justify-content: flex-start;
