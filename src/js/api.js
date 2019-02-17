@@ -6,7 +6,6 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
   const API_KEY = '9ECKBM7-HXVMJKZ-P8AE3JG-44R79HS';
   return {
     getBeers: (query) => {
-      debugger;
       const requestUrl = query ? `${SEARCH_BEERS_QUERY}${query}` : BEERS_QUERY;
       return fetch(requestUrl, {
         method: 'get',
