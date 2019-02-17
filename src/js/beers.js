@@ -18,8 +18,9 @@ const templateBeers = ({ name, image, description, beerId }) => `
   </div>
 `;
 
-export const renderBeers = () => {
-  getBeers().then((beers) => {
+export const renderBeers = (query) => {
+  getBeers(query).then((beers) => {
+    debugger;
     const cards = document.querySelector('.cards-container');
     const beersHtml = beers.map(templateBeers).join('');
     cards.innerHTML = beersHtml;
