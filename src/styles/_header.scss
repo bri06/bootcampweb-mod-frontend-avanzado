@@ -4,6 +4,7 @@ header {
   align-items: center;
   background-color: orange;
   height: 50px;
+  max-width: 100%;
   .app-logo {
     font-size: 1.5rem;
     padding-left: 10px;
@@ -12,21 +13,36 @@ header {
       color: white;
     }
   }
-  .material-icons {
+  .fa-search {
     cursor: pointer;
     padding-right: 10px;
   }
-  .beer-search {
-    width: 60%;
-    background: rgba(0,0,0,0.04);
-    padding: 8px 8px 8px 10px;
-    border-radius: 8px;
+  .btn-search {
+    border: none;
+    background-color: transparent;
   }
-  .input-search {
+  .beer-search {
+    background: rgba(0,0,0,0.04);
+    padding: 8px 0px 8px 8px;
+    margin-right: 5px;
+    border-radius: 8px;
+    .search-form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include desktop {
+      width: 60%;
+      margin-right: 20px;
+      .search-form {
+        padding: 0 10px;
+      }
+    }
+  }
+  .beer-search__input {
     background: transparent;
     border: none;
     outline: 0px;
-    padding: 0px 50px 0px 15px;
   }
 
 }
