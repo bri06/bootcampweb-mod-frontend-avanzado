@@ -12,13 +12,13 @@ const templateDetailBeer = ({ name, image, description, ingredients, likes }) =>
   <div class="detail-section_img_rat">
   <h2>${name}</h2>
     <img class="detail-section__image" src="${image}" alt="${name}">
-    <form id="like-form">
-      <div class="rating">
-        <p>${likes}</p>
-        <button type="submit" class="icon" id="like-button">
-          <i class="fas fa-heart"></i>
-        </button>
-      </div>
+    <form id="like-form" class="form-container">
+      <button type="submit" class="icon" id="like-button">
+        <div class="rating">
+          <p>${likes}</p>
+            <i class="fas fa-heart"></i>
+          </div>
+      </button>
     </form>
   </div>
 

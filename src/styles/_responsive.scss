@@ -4,8 +4,8 @@
   }
 }
 
-@mixin largeDesktop {
-  @media (min-width: #{$large-desktop-width}) {
+@mixin middleDesktop {
+  @media (min-width: #{$middle-desktop-width}) {
     @content;
   }
 }

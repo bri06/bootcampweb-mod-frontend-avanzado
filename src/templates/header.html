@@ -1,11 +1,24 @@
 <header>
-  <div class="app-logo">
-    <a href="/">BeerFlix</a>
-  </div>
-  <div class="beer-search">
-    <form id="beer-search__form" class="search-form">
-      <input type="text" class="beer-search__input" placeholder="Search a beer...">
-      <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
-    </form>
+  <picture>
+    <source
+      srcset="
+        /images/bar-209148_640.jpg 320w,
+        /images/bar-209148_1920.jpg 800w,
+        /images/bar-209148_1280.jpg 1280w,
+      "
+      media="(min-width: 768px)"
+    >
+    <img class="img-header" src="/images/bar-209148_640.jpg" alt="beers background" />
+  </picture>
+  <div class="navbar-container">
+    <div class="app-logo">
+      <a href="/">BeerFlix</a>
+    </div>
+    <div class="beer-search">
+      <form id="beer-search__form" class="search-form">
+        <input type="text" class="beer-search__input" placeholder="Search a beer...">
+        <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
   </div>
 </header>

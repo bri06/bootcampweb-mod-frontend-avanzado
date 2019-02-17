@@ -1,8 +1,6 @@
 import api from './api';
-import queryString from 'querystring';
 
 const { addLike, getBeer } = api();
-
 
 const addLikeTemplate = ({ likes }) => `
 <p>${likes}</p>
@@ -15,7 +13,6 @@ const addLikeTemplate = ({ likes }) => `
 export const addLikeToDOM = (btnLike, id) => {
   btnLike.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('PILLA EVENTO');
     addLike(id)
     .then(() => getBeer(id))
     .then((beer) => {
