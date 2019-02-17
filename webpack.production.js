@@ -11,7 +11,7 @@ module.exports = {
     detail: path.join(__dirname, 'src', 'detail.js')
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.join(__dirname, 'dist')
   },
   module: {
@@ -46,13 +46,16 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
+      chunks: ['app'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,
       }
     }),
     new HtmlWebpackPlugin({
+      filename: 'detail.html',
       template: path.join(__dirname, 'src', 'detail.html'),
+      chunks: ['detail'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,
