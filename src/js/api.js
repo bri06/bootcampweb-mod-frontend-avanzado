@@ -5,13 +5,21 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
   const SEARCH_BEERS_QUERY = `${BEERS_URL}?search=`;
   const API_KEY = '9ECKBM7-HXVMJKZ-P8AE3JG-44R79HS';
   return {
-    getBeers: (query) => {
+    getBeers: (query, month) => {
       const requestUrl = query ? `${SEARCH_BEERS_QUERY}${query}` : BEERS_QUERY;
       return fetch(requestUrl, {
         method: 'get',
         headers: { 'X-API-KEY': API_KEY }})
       .then(res => res.json())
-      .then(({ beers }) => beers)
+      .then(({ beers }) => {
+        if (month) {
+          return beers.filter(({ firstBrewed }) => {
+            const [firstBrewedMonth, year] = firstBrewed.split('/');
+            return firstBrewedMonth.includes(month)
+          });
+        }
+        return beers;
+      })
       .catch(err => console.error(err));;
     },
 

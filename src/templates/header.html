@@ -2,13 +2,16 @@
   <picture>
     <source
       srcset="
-        /images/bar-209148_640.jpg 320w,
-        /images/bar-209148_1920.jpg 800w,
-        /images/bar-209148_1280.jpg 1280w,
+        /bar-209148_1920.jpg 800w,
+        /bar-209148_1280.jpg 1280w,
       "
-      media="(min-width: 768px)"
+      media="(min-width: 800px)"
     >
-    <img class="img-header" src="/images/bar-209148_640.jpg" alt="beers background" />
+    <source
+      srcset="/bar-209148_640.jpg 320w"
+      media="(min-width: 320px)"
+    >
+    <img class="img-header" src="/bar-209148_1920.jpg" alt="beers background" />
   </picture>
   <div class="navbar-container">
     <div class="app-logo">
@@ -19,6 +22,25 @@
         <input type="text" class="beer-search__input" placeholder="Search a beer...">
         <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
       </form>
+    </div>
+    <div class="filter">
+      <p>Select a month to filter: </p>
+      <select id="month-select">
+        <option value="1">01</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
+        <option value="8">08</option>
+        <option value="9">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        </select>
+      <button class="btn-filter">Filter</button>
     </div>
   </div>
 </header>

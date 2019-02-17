@@ -62,5 +62,22 @@ header {
     filter: grayscale(80%);
    }
   }
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    p {
+      color: #FFFF;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .btn-filter {
+      border: none;
+      background-color: transparent;
+      background-color: #f8a50b;
+      padding: 5px;
+      font-family: 'Open Sans', sans-serif;
+      box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
 }
 
